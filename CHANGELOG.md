@@ -4,6 +4,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `f16` and `bf16` now implement `Immutable` and `KnownLayout` for `zerocopy` crate. By [@usamoi].
 
 
 ## [2.5.0] - 2024-03-13 <a name="2.5.0"></a>
@@ -374,6 +376,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [@comath]: https://github.com/comath
 [@FL33TW00D]: https://github.com/FL33TW00D
 [@kpreid]: https://github.com/kpreid
+[@usamoi]: https://github.com/usamoi
 
 
 [Unreleased]: https://github.com/starkat99/half-rs/compare/v2.5.0...HEAD
