@@ -4,6 +4,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Fixed some incorrect minimum supported versions of dependencies that weren't caught due to
+  improper `Cargo.lock`:
+  * `num-traits` 0.2.14 -> 0.2.16
+  * `zerocopy` 0.8.0 -> 0.8.23
+  * `arbitrary` 1.3.2 -> 1.4.1
+
 ### Added
 - `f16` and `bf16` now implement `Immutable` and `KnownLayout` for `zerocopy` crate. By [@usamoi].
 
@@ -17,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   * `rkyv` 0.7 -> 0.8
   * (dev) `criterion` 0.4 -> 0.5
 - Minimum supported Rust version has been changed to 1.81 due to above dependency updates.
-- Minor restructing of included license file locations to be more consistent with crates ecosystem.
+- Minor restructuring of included license file locations to be more consistent with crates ecosystem.
 
 ### Added
 - Added support for `arbitrary` crate. Fixes [#110]. By [@FL33TW00D].
