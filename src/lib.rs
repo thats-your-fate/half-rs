@@ -223,7 +223,6 @@
 #[cfg(feature = "alloc")]
 extern crate alloc;
 
-mod bfloat;
 mod binary16;
 mod leading_zeros;
 #[cfg(feature = "num-traits")]
@@ -234,7 +233,6 @@ pub mod slice;
 #[cfg(feature = "alloc")]
 pub mod vec;
 
-pub use bfloat::bf16;
 pub use binary16::f16;
 
 
@@ -255,7 +253,7 @@ impl SampleUniform for bf16 {
 /// ```
 pub mod prelude {
     #[doc(no_inline)]
-    pub use crate::{bf16, f16};
+    pub use crate::f16; // removed bf16
 
     #[cfg(not(target_arch = "spirv"))]
     #[doc(no_inline)]
@@ -266,12 +264,10 @@ pub mod prelude {
     pub use crate::vec::{HalfBitsVecExt, HalfFloatVecExt};
 }
 
-// Keep this module private to crate
 mod private {
-    use crate::{bf16, f16};
+    use crate::f16;
 
     pub trait SealedHalf {}
 
     impl SealedHalf for f16 {}
-    impl SealedHalf for bf16 {}
 }
