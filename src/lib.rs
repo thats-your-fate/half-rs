@@ -238,6 +238,17 @@ pub use bfloat::bf16;
 pub use binary16::f16;
 
 #[cfg(feature = "rand_distr")]
+mod rand_patch {
+    use rand::distributions::uniform::{SampleBorrow, SampleUniform, UniformSampler, Uniform};
+    use crate::bf16;
+
+    impl SampleUniform for bf16 {
+        type Sampler = Uniform<bf16>;
+    }
+}
+
+
+#[cfg(feature = "rand_distr")]
 mod rand_distr;
 
 /// A collection of the most used items and traits in this crate for easy importing.
