@@ -237,16 +237,12 @@ pub mod vec;
 pub use bfloat::bf16;
 pub use binary16::f16;
 
-#[cfg(feature = "rand_distr")]
 use rand::distributions::uniform::{SampleUniform, Uniform};
 
-#[cfg(feature = "rand_distr")]
 impl SampleUniform for bf16 {
     type Sampler = Uniform<bf16>;
 }
 
-#[cfg(feature = "rand_distr")]
-mod rand_distr;
 
 
 
